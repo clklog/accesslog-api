@@ -1,0 +1,33 @@
+springdoc:
+  swagger-ui:
+    enabled: true
+    tagsSorter: alpha
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.zcunsoft.accesslog.api.controllers
+server:
+  port: 8087
+spring:
+  application.name: accesslogapi
+  datasource:
+    clickhouse:
+#      jdbc-url: jdbc:clickhouse://10.10.220.188:8123/default
+#      username: default
+#      password:
+      jdbc-url: jdbc:clickhouse://clickhouse.tracking.zcunsoft.com:443/clklog?ssl=true
+      username: default
+      password: xwJ42Pu9roFaKHkB
+      driver-class-name: com.clickhouse.jdbc.ClickHouseDriver
+      connection-timeout: 20000
+      maximum-pool-size: 5
+logging:
+  file:
+    path: log
+accesslogapi:
+  #  access-control-allow-origin: "https://cyh.test.zcunsoft.com"
+  access-control-allow-origin: "*"
+  project-name: hqq
