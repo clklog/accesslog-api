@@ -10,17 +10,14 @@ springdoc:
       paths-to-match: '/**'
       packages-to-scan: com.zcunsoft.accesslog.api.controllers
 server:
-  port: 8087
+  port: 8089
 spring:
-  application.name: accesslogapi
+  application.name: accesslog-api
   datasource:
     clickhouse:
-#      jdbc-url: jdbc:clickhouse://10.10.220.188:8123/default
-#      username: default
-#      password:
-      jdbc-url: jdbc:clickhouse://clickhouse.tracking.zcunsoft.com:443/clklog?ssl=true
+      jdbc-url: jdbc:clickhouse://localhost:8123/default
       username: default
-      password: xwJ42Pu9roFaKHkB
+      password:
       driver-class-name: com.clickhouse.jdbc.ClickHouseDriver
       connection-timeout: 20000
       maximum-pool-size: 5
@@ -28,6 +25,5 @@ logging:
   file:
     path: log
 accesslogapi:
-  #  access-control-allow-origin: "https://cyh.test.zcunsoft.com"
   access-control-allow-origin: "*"
-  project-name: hqq
+  project-name: accesslog
