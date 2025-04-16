@@ -13,7 +13,7 @@ import javax.servlet.Filter;
 import java.util.Arrays;
 
 
-@Configuration
+//@Configuration
 public class CorsFilterConfiguration {
     @Resource
     ClklogApiSetting setting;
