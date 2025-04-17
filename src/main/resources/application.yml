@@ -10,7 +10,7 @@ springdoc:
       paths-to-match: '/**'
       packages-to-scan: com.zcunsoft.accesslog.api.controllers
 server:
-  port: 8089
+  port: 8080
 spring:
   application.name: accesslog-api
   datasource:
