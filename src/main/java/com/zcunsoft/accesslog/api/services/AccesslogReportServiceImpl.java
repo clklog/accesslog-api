@@ -106,6 +106,8 @@ public class AccesslogReportServiceImpl implements AccesslogIReportService {
         MapSqlParameterSource paramMap = new MapSqlParameterSource();
         String getListSql = "select t.http_host as http_host from  gp_nginx_access t ";
         String where = "";
+        where = buildStatDateStartFilter(getHttpHostRequest.getStartTime(), paramMap, where);
+        where = buildStatDateEndFilter(getHttpHostRequest.getEndTime(), paramMap, where);
         where = buildApplicationCodeListFilter(getHttpHostRequest.getApplicationCode(), paramMap, where);
         if (StringUtils.isNotBlank(where)) {
             getListSql += " where " + where.substring(4);
